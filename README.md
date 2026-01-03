@@ -41,17 +41,17 @@
 터미널에서 아래 명령어를 실행하면 전체 벤치마크가 수행되고 결과가 JSON 파일로 생성됩니다.
 
 
-bash ./gradlew jmh``` 
-
-### IDE(IntelliJ)에서 실행 및 프로파일링
+bash ./gradlew jmh
+IDE(IntelliJ)에서 실행 및 프로파일링
 `JmhRunner.java`를 실행하여 직접 테스트를 수행할 수 있습니다. **VisualVM** 등의 툴을 사용하여 런타임 중의 CPU 및 Memory 점유율을 함께 분석하는 것을 권장합니다.
-```
 
-java // JmhRunner.java public class JmhRunner { public static void main(String[] args) throws Exception { Options opt = new OptionsBuilder() .include(".JsonBenchmarkLarge.") .forks(2) .build(); new Runner(opt).run(); } }``` 
+```
+java // JmhRunner.java public class JmhRunner { public static void main(String[] args) throws Exception { Options opt = new OptionsBuilder() .include(".JsonBenchmarkLarge.") .forks(2) .build(); new Runner(opt).run(); } }
+``` 
 
 ## 📂 Project Structure
 - `src/main/java/com/eastwoo/study/JmhRunner.java`: 벤치마크 실행기
 - `src/main/java/com/eastwoo/study/JsonBenchmarkLarge.java`: 메인 벤치마크 로직
 - `src/main/java/com/eastwoo/study/LargeJsonGenerator.java`: 테스트용 대용량 데이터 생성기
 - `src/main/java/com/eastwoo/study/dto/FrameData.java`: JSON 데이터 매핑을 위한 모델
-```
+
